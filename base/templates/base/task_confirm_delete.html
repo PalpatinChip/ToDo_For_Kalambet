@@ -1,0 +1,18 @@
+{% extends 'base/main.html' %}
+{% block content %}
+
+<div class="header-bar">
+    <a href="{% url 'tasks' %}">&#8592; Назад!</a>
+</div>
+
+<div class="card-body">
+    <form method="POST">
+        {% csrf_token %}
+        <p>Вы действительно хотите лишить жизни невинную задачу, которую сами создали, назвав <b>"{{task}}"</b>? </p>
+        <input class="button" type="submit" value="Убить?" />
+    </form>
+</div>
+
+
+
+{% endblock content %}
